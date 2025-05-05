@@ -1,10 +1,10 @@
 * {
     box-sizing: border-box;
-    font-family:Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
-    background: linear-gradient(120deg,  #f8b500);
+    background: linear-gradient(120deg, #f8b500);
     margin: 0;
     padding: 0;
 }
@@ -15,15 +15,9 @@ h1, h2 {
     margin-top: 30px;
 }
 
-
-form {
-    background-color: #ffffffcc;
-    width: 90%;
-    max-width: 500px;
-    margin: 30px auto;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+/* Efeito ao passar o mouse */
+.btn:hover, .voltar-btn:hover {
+    background-color: #45a049; /* Cor quando o mouse passa por cima */
 }
 
 label {
@@ -49,7 +43,8 @@ input:focus, textarea:focus, select:focus {
     outline: none;
 }
 
-.btn {
+/* Estilo para botões em geral */
+.btn, .voltar-btn {
     background-color: #f8b500;
     color: white;
     padding: 10px 20px;
@@ -66,6 +61,12 @@ input:focus, textarea:focus, select:focus {
     background-color: #d99900;
 }
 
+/* Estilo específico para o botão voltar */
+.voltar-btn {
+    background-color: #4CAF50;
+    margin: 20px 0;
+}
+
 iframe {
     display: block;
     width: 95%;
@@ -73,7 +74,7 @@ iframe {
     border: none;
     margin: 40px auto;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     background-color: white;
 }
 
@@ -84,17 +85,13 @@ iframe {
     }
 }
 
-
-
-
-
-
+/* Estilo da tabela */
 table {
     width: 90%;
     margin: 30px auto;
     border-collapse: collapse;
     background-color: #ffffffcc;
-    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
     overflow: hidden;
 }
@@ -119,17 +116,20 @@ h1 {
     margin-top: 30px;
 }
 
+/* Estilo adicional para tabela */
 table {
-            width:90%;
-            margin:20px auto;
-            border-collapse:collapse;
-        }
-        th, td {
-            padding:8px;
-            border:1px solid #ccc;
-            text-align:left;
-        }
-        th {
-            background:#f8b500;
-            color:#fff;
-        }
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 8px;
+    border: 1px solid #ccc;
+    text-align: left;
+}
+
+th {
+    background: #f8b500;
+    color: #fff;
+}

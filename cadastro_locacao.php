@@ -43,48 +43,73 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Locação</title>
     <link rel="stylesheet" href="css/style.css"> 
+    <style>
+        /* Estilo para o botão de Voltar */
+        .voltar-btn {
+            background-color: #4CAF50; /* Cor de fundo */
+            color: white; /* Cor do texto */
+            padding: 10px 20px; /* Padding do botão */
+            font-size: 16px; /* Tamanho da fonte */
+            border: none; /* Remove bordas */
+            border-radius: 5px; /* Bordas arredondadas */
+            cursor: pointer; /* Cursor de mão ao passar o mouse */
+            margin: 20px 0; /* Margem superior e inferior */
+            transition: background-color 0.3s; /* Animação suave na troca de cor */
+        }
+
+        .voltar-btn:hover {
+            background-color: #45a049; /* Cor de fundo ao passar o mouse */
+        }
+    </style>
 </head>
 <body>
 
-    <h1>Cadastro de Locação</h1>
+<h1>Cadastro de Locação</h1>
 
-    <!-- Exibe mensagens de erro ou sucesso, se existirem -->
-    <?php if (isset($erro)): ?>
-        <div class="alert alert-danger"><?= $erro ?></div>
-    <?php elseif (isset($sucesso)): ?>
-        <div class="alert alert-success"><?= $sucesso ?></div>
-    <?php endif; ?>
+<!-- Exibe mensagens de erro ou sucesso, se existirem -->
+<?php if (isset($erro)): ?>
+    <div class="alert alert-danger"><?= $erro ?></div>
+<?php elseif (isset($sucesso)): ?>
+    <div class="alert alert-success"><?= $sucesso ?></div>
+<?php endif; ?>
 
-    <!-- Formulário para cadastro de locações -->
-    <form action="" method="POST">
-        <label for="veiculo">Veículo:</label>
-        <select id="veiculo" name="veiculo" required>
-            <option value="">Selecione</option>
-            <?php foreach ($veiculos as $v): ?>
-                <option value="<?= $v['veiculo_placa'] ?>"><?= $v['veiculo_placa'] ?> - <?= $v['marca_descricao'] ?></option>
-            <?php endforeach; ?>
-        </select>
+<!-- Formulário para cadastro de locações -->
+<form action="" method="POST">
+    <label for="veiculo">Veículo:</label>
+    <select id="veiculo" name="veiculo" required>
+        <option value="">Selecione</option>
+        <?php foreach ($veiculos as $v): ?>
+            <option value="<?= $v['veiculo_placa'] ?>"><?= $v['veiculo_placa'] ?> - <?= $v['marca_descricao'] ?></option>
+        <?php endforeach; ?>
+    </select>
 
-        <label for="cliente">Cliente:</label>
-        <select id="cliente" name="cliente" required>
-            <option value="">Selecione</option>
-            <?php foreach ($clientes as $c): ?>
-                <option value="<?= $c['cliente_cpf'] ?>"><?= $c['cliente_nome'] ?></option>
-            <?php endforeach; ?>
-        </select>
+    <label for="cliente">Cliente:</label>
+    <select id="cliente" name="cliente" required>
+        <option value="">Selecione</option>
+        <?php foreach ($clientes as $c): ?>
+            <option value="<?= $c['cliente_cpf'] ?>"><?= $c['cliente_nome'] ?></option>
+        <?php endforeach; ?>
+    </select>
 
-        <label for="data_inicio">Data de Início:</label>
-        <input type="date" id="data_inicio" name="data_inicio" required>
+    <label for="data_inicio">Data de Início:</label>
+    <input type="date" id="data_inicio" name="data_inicio" required>
 
-        <label for="data_fim">Data de Fim:</label>
-        <input type="date" id="data_fim" name="data_fim" required>
+    <label for="data_fim">Data de Fim:</label>
+    <input type="date" id="data_fim" name="data_fim" required>
 
-        <input type="submit" class="btn" value="Cadastrar Locação">
+    <input type="submit" class="btn" value="Cadastrar Locação">
+</form>
+
+<!-- Botão de voltar -->
+<center>
+    <form action="index.html" method="get">
+        <button type="submit" class="voltar-btn">Voltar para o Início</button>
     </form>
+</center>
 
-    <!-- Seção para exibir locações já cadastradas -->
-    <h2>Locações Cadastradas</h2>
-    <iframe src="listar_locacoes.php"></iframe>
+<!-- Seção para exibir locações já cadastradas -->
+
+<iframe src="listar_locacoes.php"></iframe>
 
 </body>
 </html>

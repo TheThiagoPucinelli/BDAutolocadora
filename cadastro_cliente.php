@@ -22,11 +22,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <title>Cadastro de Cliente</title>
    
     <link rel="stylesheet" href="css/Style.css">
+    <style>
+        /* Estilo para o botão de Voltar */
+        .voltar-btn {
+            background-color: #4CAF50; /* Cor de fundo */
+            color: white; /* Cor do texto */
+            padding: 10px 20px; /* Padding do botão */
+            font-size: 16px; /* Tamanho da fonte */
+            border: none; /* Remove bordas */
+            border-radius: 5px; /* Bordas arredondadas */
+            cursor: pointer; /* Cursor de mão ao passar o mouse */
+            margin: 20px 0; /* Margem superior e inferior */
+            transition: background-color 0.3s; /* Animação suave na troca de cor */
+        }
+
+        .voltar-btn:hover {
+            background-color: #45a049; /* Cor de fundo ao passar o mouse */
+        }
+    </style>
 </head>
 <body>
     <h1>Cadastro de Cliente</h1>
 
-
+    <!-- Formulário para cadastro de clientes -->
     <form action="" method="POST">
         <label for="cpf">CPF:</label>
         <input type="text" id="cpf" name="cpf" required placeholder="Digite o CPF">
@@ -40,9 +58,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <input type="submit" class="btn" value="Cadastrar">
     </form>
 
-    <h2>Clientes Cadastrados</h2>
+    <!-- Botão de Voltar -->
+    <center>
+        <form action="index.html" method="get">
+            <button type="submit" class="voltar-btn">Voltar para o Início</button>
+        </form>
+    </center>
 
-    <!-- Iframe que carrega a lista de clientes já cadastrados para mostrar oque acabou de ser cadastrado -->
+   
+
+    <!-- Iframe que carrega a lista de clientes já cadastrados -->
     <iframe src="listar_clientes.php"></iframe>
 </body>
 </html>
